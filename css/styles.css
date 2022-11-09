@@ -7,6 +7,7 @@
   --background-primary-color: #ffffff;
   --background-secondary-color: #2f303a;
   --background-tertiary-color: #f5f4fa;
+  --card-set-gap: 30px;
 }
 
 h1,
@@ -30,10 +31,22 @@ body {
   background-color: var(--background-primary-color);
 }
 
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
-  /* outline: 1px solid violet; */
 }
 
 .address {
@@ -47,11 +60,10 @@ body {
 }
 
 .container {
-  width: 1230px;
+  width: 1200px;
   padding-right: 15px;
   padding-left: 15px;
   margin: 0 auto;
-  /* outline: 2px solid green; */
 }
 
 /* ___________________HEADER_________________ */
@@ -121,6 +133,16 @@ body {
   gap: 50px;
 }
 
+.title {
+  margin-bottom: 50px;
+
+  font-size: 36px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--primery-text-color);
+}
+
 /* ___________________HERO_______________________ */
 
 .hero {
@@ -157,6 +179,7 @@ body {
   color: var(--title-white-color);
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 0;
   border-radius: 4px;
 }
 
@@ -191,18 +214,8 @@ body {
 
 /* _______________________WORK___________________ */
 
-.work{
+.work {
   padding-top: 0;
-}
-
-.work-title {
-  margin-bottom: 50px;
-
-  font-size: 36px;
-  line-height: 1.2;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: var(--primery-text-color);
 }
 
 .work-list {
@@ -220,15 +233,6 @@ body {
 .team {
   background-color: var(--background-tertiary-color);
 }
-.team-title {
-  margin-bottom: 50px;
-
-  font-size: 36px;
-  line-height: 1.2;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: var(--primery-text-color);
-}
 
 .team-list {
   display: flex;
@@ -244,13 +248,13 @@ body {
   border-radius: 0px 0px 4px 4px;
 }
 
-.img {
-  margin-bottom: 30px;
+.member-cont {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .member-title {
   margin-bottom: 10px;
-
   font-weight: 500;
   font-size: 16px;
   line-height: 1.2;
@@ -259,8 +263,6 @@ body {
 }
 
 .team-list-text {
-  margin-bottom: 30px;
-
   font-size: 16px;
   line-height: 1.2;
   letter-spacing: 0.03em;
@@ -271,6 +273,7 @@ body {
 
 .footer .logo {
   color: var(--title-white-color);
+  margin: 0;
 }
 
 .footer {
@@ -291,7 +294,7 @@ body {
   color: var(--title-white-color);
 }
 
-.address-list > .address-list-item {
+.address-list > .address-list-item:not(:last-child) {
   margin-bottom: 9px;
 }
 
@@ -313,6 +316,8 @@ body {
 .header-border {
   border-bottom: 1px solid #ececec;
 }
+
+/* BUTTONS */
 
 .btn-list {
   margin-bottom: 50px;
@@ -344,37 +349,28 @@ body {
   color: var(--title-white-color);
 }
 
+/* CARD-SET */
+
 .post-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+  margin-left: calc(-1 * var(--card-set-gap));
+  margin-top: calc(-1 * var(--card-set-gap));
 }
 
-/* .post-list img {
-  margin-bottom: 20px;
-} */
-
-.post-list-title,
-.post-list-text
-{
-padding-left: 24px;
-}
-
-.post-list-title{
-  padding-top: 20px;
-  margin-bottom: 4px;
-}
-
-.post-list-text{
- padding-bottom: 20px;
+.post-list-item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-left: var(--card-set-gap);
+  margin-top: var(--card-set-gap);
 }
 
 .border {
+  padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: 1px transparent;
 }
 .post-list-title {
+  margin-bottom: 4px;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
